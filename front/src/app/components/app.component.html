@@ -1,0 +1,101 @@
+<div class="container-fluid header-container">
+  <div class="row perspective-title-row">
+    <div class="col p-0">
+      <span class="perspective-title">Discover Your Perspective</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col p-0">
+      <p class="perspective-desc">Complete the 7 min test and get a detailed report of your lenses on the world.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="content-container">
+  <div class="row question-row">
+    <div class="col p-0">
+      <div class="row">
+        <div class="col text-center col-question">
+          <span class="question">You consider yourself more practical than creative.</span>
+        </div>
+      </div>
+
+      <div class="row answer-row justify-content-center">
+        <div class="col-2 text-right disagree-label">Disagree</div>
+        <div class="col-1">
+          <label class="radio-container">
+            <input type="radio" [(ngModel)]="answer1" value="1" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="col-1">
+          <label class="radio-container">
+            <input type="radio" [(ngModel)]="answer1" value="2" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="col-1">
+          <label class="radio-container">
+            <input type="radio" [(ngModel)]="answer1" value="3" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="col-1">
+          <label class="radio-container">
+            <input type="radio" [(ngModel)]="answer1" value="4" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="col-1">
+          <label class="radio-container">
+            <input type="radio" [(ngModel)]="answer1" value="5" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="col-1">
+          <label class="radio-container">
+            <input type="radio" [(ngModel)]="answer1" value="6" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="col-1">
+          <label class="radio-container">
+            <input type="radio" [(ngModel)]="answer1" value="7" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="col-2 text-left agree-label">Agree</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-container mt-0">
+  <div class="row email-row">
+    <div class="col text-center col-email pb-0">
+      <div class="row">
+        <div class="col">
+          <span class="email-label">Your Email</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-email">
+          <input class="email-input" type="email" required placeholder="you@example.com" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="content-container submit-container">
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn save-btn" (click)="getAnswer()">Save & Continue</button>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

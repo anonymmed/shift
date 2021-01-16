@@ -1,0 +1,183 @@
+.perspective-title {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #113264;
+
+}
+
+.perspective-desc {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #495057;
+}
+
+.perspective-title-row {
+  margin-bottom: 18px;
+}
+
+.header-container {
+  margin-top: 4.94%;
+  padding-left: 5.86%;
+}
+
+.content-container {
+  max-width: 740px;
+  max-height: 1276px;
+  margin: 48px auto auto;
+}
+
+.question-row , .email-row {
+  width: 100%;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.question {
+  /* You consider yourself more practical than creative. */
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #495057;
+
+}
+
+.col-question {
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+}
+
+.disagree-label {
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: right;
+  color: #FA4344;
+}
+
+.agree-label {
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #00A079;
+
+}
+.answer-row {
+  padding-bottom: 29px;
+  max-width: 570px;
+  margin-left: 85px;
+  margin-right: 85px;
+}
+
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  border: 3px solid #AAAAAA;
+  box-sizing: border-box;
+}
+
+.radio-container:hover input ~ .checkmark {
+  background-color: #d3d3d3d3;
+}
+
+.radio-container input:checked ~ .checkmark {
+  background-color: lightblue;
+}
+
+.col-email {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  margin-bottom: 0;
+}
+
+.email-label {
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #495057;
+}
+
+.email-input {
+  background: #FFFFFF;
+  border: 2px solid #AAAAAA;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 570px;
+  height: 48px;
+  padding-left: 23px;
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.email-input::placeholder {
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #E5E5E5;
+}
+
+.save-btn {
+  background: #3D59FA;
+  border-radius: 3px;
+  width: 155px;
+  height: 36px;
+  padding: 8px 16px 8px 17px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.submit-container {
+  margin-top: 64px;
+}
