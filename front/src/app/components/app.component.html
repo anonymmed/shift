@@ -12,66 +12,68 @@
   </div>
 
 </div>
+<ng-container *ngIf="questions.length > 0;else loading">
 
-<div class="content-container">
-  <div class="row question-row">
-    <div class="col p-0">
-      <div class="row">
-        <div class="col text-center col-question">
-          <span class="question">You consider yourself more practical than creative.</span>
+  <div class="content-container">
+    <div class="row question-row"  *ngFor="let question of questions">
+      <div class="col p-0">
+        <div class="row">
+          <div class="col text-center col-question">
+            <span class="question">{{question.name}}</span>
+          </div>
         </div>
-      </div>
 
-      <div class="row answer-row justify-content-center">
-        <div class="col-2 text-right disagree-label">Disagree</div>
-        <div class="col-1">
-          <label class="radio-container">
-            <input type="radio" [(ngModel)]="answer1" value="1" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="col-1">
-          <label class="radio-container">
-            <input type="radio" [(ngModel)]="answer1" value="2" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="col-1">
-          <label class="radio-container">
-            <input type="radio" [(ngModel)]="answer1" value="3" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="col-1">
-          <label class="radio-container">
-            <input type="radio" [(ngModel)]="answer1" value="4" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="col-1">
-          <label class="radio-container">
-            <input type="radio" [(ngModel)]="answer1" value="5" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="col-1">
-          <label class="radio-container">
-            <input type="radio" [(ngModel)]="answer1" value="6" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="col-1">
-          <label class="radio-container">
-            <input type="radio" [(ngModel)]="answer1" value="7" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="col-2 text-left agree-label">Agree</div>
+        <div class="row answer-row justify-content-center">
+          <div class="col-2 text-right disagree-label">Disagree</div>
+          <div class="col-1">
+            <label class="radio-container">
+              <input type="radio" [(ngModel)]="answers[question.id]" value="1" name="{{question.id}}">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-1">
+            <label class="radio-container">
+              <input type="radio" [(ngModel)]="answers[question.id]" value="2" name="{{question.id}}">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-1">
+            <label class="radio-container">
+              <input type="radio" [(ngModel)]="answers[question.id]" value="3" name="{{question.id}}">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-1">
+            <label class="radio-container">
+              <input type="radio" [(ngModel)]="answers[question.id]" value="4" name="{{question.id}}">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-1">
+            <label class="radio-container">
+              <input type="radio" [(ngModel)]="answers[question.id]" value="5" name="{{question.id}}">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-1">
+            <label class="radio-container">
+              <input type="radio" [(ngModel)]="answers[question.id]" value="6" name="{{question.id}}">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-1">
+            <label class="radio-container">
+              <input type="radio" [(ngModel)]="answers[question.id]" value="7" name="{{question.id}}">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-2 text-left agree-label">Agree</div>
 
+        </div>
       </div>
     </div>
+
   </div>
-</div>
 
 <div class="content-container mt-0">
   <div class="row email-row">
@@ -98,4 +100,18 @@
     </div>
   </div>
 </div>
+</ng-container>
+<ng-template #loading class="row question-row">
+  <div class="row question-row" >
+    <div class="col p-0">
+      <div class="row">
+        <div class="col text-center col-question">
+          <img src="https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-template>
+
 <router-outlet></router-outlet>
