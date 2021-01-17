@@ -27,7 +27,7 @@ class Questions
     /**
      * @ORM\Column(type="string", length=2)
      */
-    private $dimention;
+    private $dimension;
 
     /**
      * @ORM\Column(type="integer")
@@ -66,14 +66,14 @@ class Questions
         return $this;
     }
 
-    public function getDimention(): ?string
+    public function getDimension(): ?string
     {
-        return $this->dimention;
+        return $this->dimension;
     }
 
-    public function setDimention(string $dimention): self
+    public function setDimension(string $dimension): self
     {
-        $this->dimention = $dimention;
+        $this->dimension = $dimension;
 
         return $this;
     }

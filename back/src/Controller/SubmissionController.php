@@ -27,6 +27,22 @@ class SubmissionController extends AbstractController
              * @var $user Users|null
              */
             $user = $em->getRepository(Users::class)->findOneBy(['email' => $data['email']]);
+
+            /*
+             * Get All Dimensions
+             */
+            $dimensionsData = $em->getRepository(Questions::class)->getDimensions();
+
+            /*
+             * Parse and Initialize Dimensions
+             */
+            $dimensions = [];
+            $singleDimension = [];
+            foreach ($dimensionsData as $dimension) {
+                $dimensions[] = $dimension['dimension'];
+                $singleDimension[$dimension['dimension'][0]] = 0;
+                $singleDimension[$dimension['dimension'][1]] = 0;
+            }
             if ($user) {
                 $em->getRepository(Submissions::class)->deleteUserSubmissions($user->getId());
                 foreach ($data['answers'] as $key => $answer) {
@@ -39,6 +55,22 @@ class SubmissionController extends AbstractController
                         $question = $em->getRepository(Questions::class)->findOneBy(['id' => $key]);
                         $submission->setQuestion($question);
                         $submission->setAnswer($answer);
+                        switch ($question->getDirection()) {
+                            case 1:
+                                if ($answer > 4) {
+                                    $singleDimension[$question->getDimension()[1]]++;
+                                } else if ($answer < 4) {
+                                    $singleDimension[$question->getDimension()[0]]++;
+                                }
+                                break;
+                            case -1:
+
+                                if ($answer > 4) {
+                                    $singleDimension[$question->getDimension()[0]]++;
+                                } else if ($answer < 4) {
+                                    $singleDimension[$question->getDimension()[1]]++;
+                                }
+                        }
                         $em->persist($submission);
                     }
                 }
@@ -57,15 +89,42 @@ class SubmissionController extends AbstractController
                         $question = $em->getRepository(Questions::class)->findOneBy(['id' => $key]);
                         $submission->setQuestion($question);
                         $submission->setAnswer($answer);
+                        switch ($question->getDirection()) {
+                            case 1:
+                                if ($answer > 4) {
+                                    $singleDimension[$question->getDimension()[1]]++;
+                                } else if ($answer < 4) {
+                                    $singleDimension[$question->getDimension()[0]]++;
+                                }
+                                break;
+                            case -1:
+
+                                if ($answer > 4) {
+                                    $singleDimension[$question->getDimension()[0]]++;
+                                } else if ($answer < 4) {
+                                    $singleDimension[$question->getDimension()[1]]++;
+                                }
+                        }
                         $em->persist($submission);
                     }
                 }
             }
-            $em->flush();
         }
+        $result = '';
+        foreach ($dimensions as $dimension) {
+            $result1 = $singleDimension[$dimension[0]];
+            $result2 = $singleDimension[$dimension[1]];
+            if ($result1 >= $result2) {
+                $result.= $dimension[0];
+            } else {
+                $result.= $dimension[1];
+            }
+        }
+        $user->setResult($result);
+        $em->flush();
         return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/SubmissionController.php',
+            'success' => true,
+            'result' => $result,
         ]);
     }
 }

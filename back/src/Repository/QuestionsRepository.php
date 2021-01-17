@@ -20,6 +20,23 @@ class QuestionsRepository extends ServiceEntityRepository
         parent::__construct($registry, Questions::class);
     }
 
+    function getDimensions() {
+        return $this->createQueryBuilder('q')
+            ->select('q.dimension')
+            ->groupBy('q.dimension')
+            ->orderBy('q.id', 'ASC')
+            ->getQuery()
+            ->getArrayResult();
+    }
+    function getDimensionCount(string $dimension) {
+        return $this->createQueryBuilder('q')
+            ->select('count(q.id)')
+            ->where('d.dimension = :dimension')
+            ->setParameter('dimension', $dimension)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
     public function getAllQuestions() {
         return $this->createQueryBuilder('q')
             ->select('q.id', 'q.name')
