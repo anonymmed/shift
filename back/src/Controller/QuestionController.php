@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionController extends AbstractController
 {
     /**
-     * @Route("/AllQuestions", name="question", methods={"GET"})
+     * @Route("/v1/AllQuestions", name="question", methods={"GET"})
      * @param EntityManagerInterface $em
      * @return Response
      */

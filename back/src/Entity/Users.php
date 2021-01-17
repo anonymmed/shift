@@ -25,7 +25,7 @@ class Users
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=4)
+     * @ORM\Column(type="string", length=4, nullable=true)
      */
     private $result;
 

@@ -74,7 +74,6 @@
     </div>
 
   </div>
-
 <div class="content-container mt-0">
   <div class="row email-row">
     <div class="col text-center col-email pb-0">
@@ -85,7 +84,18 @@
       </div>
       <div class="row">
         <div class="col col-email">
-          <input class="email-input" type="email" required placeholder="you@example.com" />
+          <input class="email-input" type="email" required minlength="4" [(ngModel)]="email" #emailRef placeholder="you@example.com" />
+        </div>
+      </div>
+      <div class="row" *ngIf="!isEmailValid">
+        <div class="col alert alert-danger">
+          <strong>Error!</strong> Please enter a valid email address.
+        </div>
+      </div>
+
+      <div class="row" *ngIf="!isSubmissionValid">
+        <div class="col alert alert-danger">
+          <strong>Error!</strong> Please respond to all the questions.
         </div>
       </div>
     </div>
@@ -96,7 +106,7 @@
 <div class="content-container submit-container">
   <div class="row">
     <div class="col text-center">
-      <button class="btn save-btn" (click)="getAnswer()">Save & Continue</button>
+      <button class="btn save-btn" (click)="submitAnswers()">Save & Continue</button>
     </div>
   </div>
 </div>
@@ -113,5 +123,6 @@
     </div>
   </div>
 </ng-template>
+
 
 <router-outlet></router-outlet>
