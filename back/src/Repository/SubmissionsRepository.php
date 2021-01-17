@@ -19,6 +19,16 @@ class SubmissionsRepository extends ServiceEntityRepository
         parent::__construct($registry, Submissions::class);
     }
 
+    function getUserSubmissions($userId) {
+        return $this->createQueryBuilder('s')
+            ->select('q.name', 's.answer')
+            ->join('s.question', 'q')
+            ->where('s.user = :userId')
+            ->setParameter('userId', $userId)
+            ->getQuery()
+            ->getArrayResult();
+
+    }
     function deleteUserSubmissions($userId) {
         return $this->createQueryBuilder('')
             ->delete(Submissions::class, 's')

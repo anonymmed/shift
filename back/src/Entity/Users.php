@@ -61,7 +61,7 @@ class Users
         return $this->result;
     }
 
-    public function setResult(string $result): self
+    public function setResult($result): self
     {
         $this->result = $result;
 

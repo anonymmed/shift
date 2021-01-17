@@ -5,6 +5,7 @@ namespace App\Service;
 
 
 use App\Entity\Users;
+use Doctrine\ORM\EntityManagerInterface;
 
 class UserService
 {
@@ -21,9 +22,10 @@ class UserService
         return $user;
     }
 
-    public function calculateMbtiAndSaveUserResult($user, $dimensions, $singleDimension) {
+    public function calculateMbtiAndSaveUserResult($user, $dimensions, $singleDimension, EntityManagerInterface $em) {
         $result = $this->submissionService->getSubmissionResult($dimensions, $singleDimension);
         $user->setResult($result);
+        $em->flush();
     }
 
 }

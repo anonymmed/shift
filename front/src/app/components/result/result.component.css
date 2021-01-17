@@ -1,0 +1,83 @@
+.content-container {
+  min-height: 270px;
+  margin-top: 62px;
+  margin-left: 48px;
+  margin-right: 53px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.result-title {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+  color: #113264;
+}
+
+.col-result-tile {
+  padding-left: 43px;
+  padding-top: 104px;
+}
+
+.result {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #343A40;
+}
+
+.col-result {
+  padding-left: 43px;
+  padding-top:19px
+}
+
+.row-dimension-result {
+  margin: 0;
+  padding-top: 72px;
+  padding-bottom: 10px;
+}
+.dimension {
+  font-family: Roboto,sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 146.16%;
+  color: #878787;
+}
+.col-dimension {
+  min-width: 154px;
+}
+
+.active-dimension {
+  width: 110px;
+  height: 14.46px;
+  background: #A920CB;
+  padding: 0;
+}
+.inactive-dimension {
+  width: 110px;
+  height: 14.46px;
+  background: #E9ECEF;
+  padding: 0;
+}
+
+.left-col {
+  border-radius: 3px 0 0 3px;
+
+}
+
+.right-col {
+  border-radius: 0 3px 3px 0;
+  margin-right: 18px;
+}
+.col-dimension-result {
+  margin-top: auto;
+  margin-bottom: auto;
+
+}

@@ -6,6 +6,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class SubmissionService {
   constructor(private http: HttpClient) { }
+
   submitResult(email: string, answers: number[]) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -19,5 +20,6 @@ export class SubmissionService {
     };
     return this.http.post('/api/v1/SubmitResult', body, httpOptions).toPromise();
   }
-};
+
+}
 

@@ -49,17 +49,17 @@ class SubmissionService
         }
     }
 
-    public function submitUserSubmissions($data, Users $user, $singleDimension, EntityManagerInterface $em) {
+    public function submitUserSubmissions($data, Users $user, &$singleDimension, EntityManagerInterface $em) {
         foreach ($data['answers'] as $key => $answer) {
             if ($answer != null) {
                 $question = $em->getRepository(Questions::class)->findOneBy(['id' => $key]);
                 $submission = $this->createNewSubmission($user, $question, $answer);
 
                 $this->calculateAnswerScore($question, $answer, $singleDimension);
-
                 $em->persist($submission);
             }
         }
+        return $singleDimension;
     }
 
     public function getSubmissionResult($dimensions, $singleDimension) {

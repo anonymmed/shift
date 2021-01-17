@@ -1,0 +1,60 @@
+<div class="content-container">
+  <div class="row m-0">
+
+    <div class="col p-0">
+      <div class="row m-0">
+        <div class="col col-result-tile">
+          <span class="result-title">Your Perspective</span>
+        </div>
+      </div>
+      <div class="row m-0">
+        <div class="col col-result">
+          <span class="result">Your Perspective Type is {{data ? data.result : ''}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col p-0">
+      <div class="row row-dimension-result">
+        <div class="col-auto pl-0 col-dimension"><span class="dimension">Introversion (I)</span></div>
+        <div class="col-auto col-dimension-result p-0">
+          <div class="left-col" [class.active-dimension]="resultInclude('I')" [class.inactive-dimension]="!resultInclude('I')"></div>
+        </div>
+        <div class="col-auto col-dimension-result p-0">
+          <div class="right-col" [class.active-dimension]="resultInclude('E')" [class.inactive-dimension]="!resultInclude('E')"></div>
+        </div>
+        <div class="col-auto pl-0 col-dimension"><span class="dimension">Extraversion (E)</span></div>
+      </div>
+      <div class="row row-dimension-result pt-0">
+        <div class="col-auto pl-0 col-dimension"><span class="dimension">Sensing (S)</span></div>
+        <div class="col-auto col-dimension-result p-0">
+          <div class="left-col" [class.active-dimension]="resultInclude('S')" [class.inactive-dimension]="!resultInclude('S')"></div>
+        </div>
+        <div class="col-auto col-dimension-result p-0">
+          <div class="right-col" [class.active-dimension]="resultInclude('N')" [class.inactive-dimension]="!resultInclude('N')"></div>
+        </div>
+        <div class="col-auto pl-0 col-dimension"><span class="dimension">Intuition (N)</span></div>
+      </div>
+      <div class="row row-dimension-result pt-0">
+        <div class="col-auto pl-0 col-dimension"><span class="dimension">Thinking (T)</span></div>
+        <div class="col-auto col-dimension-result p-0">
+          <div class="left-col" [class.active-dimension]="resultInclude('T')" [class.inactive-dimension]="!resultInclude('T')"></div>
+        </div>
+        <div class="col-auto col-dimension-result p-0">
+          <div class="right-col" [class.active-dimension]="resultInclude('F')" [class.inactive-dimension]="!resultInclude('F')"></div>
+        </div>
+        <div class="col-auto pl-0 col-dimension"><span class="dimension">Feeling (F)</span></div>
+      </div>
+      <div class="row row-dimension-result pt-0">
+        <div class="col-auto pl-0 col-dimension"><span class="dimension">Judging (J)</span></div>
+        <div class="col-auto col-dimension-result p-0">
+          <div class="left-col" [class.active-dimension]="resultInclude('J')" [class.inactive-dimension]="!resultInclude('J')"></div>
+        </div>
+        <div class="col-auto col-dimension-result p-0">
+          <div class="right-col" [class.active-dimension]="resultInclude('P')" [class.inactive-dimension]="!resultInclude('P')"></div>
+        </div>
+        <div class="col-auto pl-0 col-dimension"><span class="dimension">Perceiving (P)</span></div>
+      </div>
+    </div>
+  </div>
+</div>
