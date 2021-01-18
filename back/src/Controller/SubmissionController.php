@@ -58,8 +58,8 @@ class SubmissionController extends AbstractController
          * @var $user Users|null
          */
         $user = $em->getRepository(Users::class)->findOneBy(['email' => $email]);
-        $submissions = $em->getRepository(Submissions::class)->getUserSubmissions($user->getId());
         if ($user) {
+            $submissions = $em->getRepository(Submissions::class)->getUserSubmissions($user->getId());
             return $this->json([
                 'success' => true,
                 'submissions' => $submissions
