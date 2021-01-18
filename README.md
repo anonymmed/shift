@@ -23,7 +23,7 @@ https://52.23.240.171:8000/api/v1/GetUserAnswers/{email}
 ```
 And for user's MBTI result :
 ```bas
-https://52.23.240.171/api/v1/GetUserMBTIScore/{email}
+https://52.23.240.171:8000/api/v1/GetUserMBTIScore/{email}
 ```
 
 ## LIVE Demo
